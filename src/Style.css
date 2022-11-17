@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navBar {
+  background-color: #0db17a;
+}
+
+#textoNavBar {
+  color: white;
+}
+
+#basic-nav-dropdown {
+  color: #f5f5f5 !important;
+}
+
+.BrandLogo {
+  width: 15px;
+}
+
+#CarritoLogo {
+  margin-right: 25px;
+}
+
+#divSteam {
+  margin-right: -150px;
+}

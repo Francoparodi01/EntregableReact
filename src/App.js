@@ -1,21 +1,15 @@
-import React from 'react';
-import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './containers/ItemListContainer';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ItemDetail from './components/ItemDetail/ItemDetail';
+import NavBar from './components/NavBar/NavBar'
+import ItemListContainer from './Container/ItemListContainer/ItemListContainer';
 
- function App() {
 
-  const categorias = ["Electronics", "Audio & Video", "Clothing"]
-
-  const temperatura = 18;
-
+function App() {
   return (
     <>
-      <NavBar 
-        categories={categorias} 
-        temp={temperatura} 
-      />
-      <ItemListContainer greeting={"Hola! Bienvenido a nuestra app!"}/>
+    <NavBar/>
+    <ItemListContainer greeting={"Bienvenido a mi app de React"}></ItemListContainer>
+    <ItemDetail></ItemDetail>
     </>
   );
 }
