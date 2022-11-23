@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { AiOutlineCreditCard } from "react-icons/ai";
 import CartWidget from '../CartWidget/CartWidget';
-import { FaSteam } from "react-icons/fa";
+import { HiUserCircle } from "react-icons/hi";
 import '../.././Style.css';
 
 
@@ -25,7 +25,7 @@ function NavBar() {
                 <Nav.Link id='textoNavBar' href="#link">Products</Nav.Link>
               </Nav>
                 <CartWidget/>
-                <Button id='divSteam' variant="secondary"><FaSteam size={25} id='SteamLogo'/> Iniciar sesión</Button>{' '}
+                <Button id='divSteam' variant="secondary"><HiUserCircle size={25} id='SteamLogo'/> Iniciar sesión</Button>
             </Navbar.Collapse>
       </Container>
     </Navbar>
