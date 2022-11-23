@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-
 const ItemCount = ({stock, initial, onAdd}) => {
 
     const [count, setCount] = useState(initial);
@@ -13,13 +12,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const handleDecrement = () => {
-
+ 
     }
 
     const addCart = () => {
         onAdd(count);
         setCount(initial);
     }
+
 
     useEffect(()=> {
 
@@ -41,3 +41,4 @@ const ItemCount = ({stock, initial, onAdd}) => {
 };
 
 export default ItemCount;
+

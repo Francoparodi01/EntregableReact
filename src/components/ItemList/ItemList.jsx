@@ -1,23 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Item from '../Item/Item';
+import './styles.scss';
 
-const ItemList = () => {
-    const [skins, setSkins] = useState([])
-    useEffect(() =>{
-         fetch("https://fakestoreapi.com/products")
-            .then(data =>data.json())
-                //.then((data) => setSkins(data.name))
-                .then((data) => console.log(data))
-    });
+const ItemList = ({products}) => {
+    return (
+      <div className='item-container'>
+          {products.length ? products.map(product => {
+              return <Item key={product.id} product={product}/>
+          })
+          :
+          <h2>Loading...</h2>
+        }
+      </div>
+    )
+  }
+  
 
-  return (
-    <div>
-        <ul>
-            {skins.map((skins) =>(
-                <li>{skins}</li>
-            ))}
-        </ul>
-    </div>
-  )
-}
-
-export default ItemList;
+export default ItemList
