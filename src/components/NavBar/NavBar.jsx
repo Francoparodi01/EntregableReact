@@ -6,13 +6,22 @@ import Button from 'react-bootstrap/Button';
 import { AiOutlineUser} from "react-icons/ai";
 import CartWidget from '../CartWidget/CartWidget';
 import { AiFillShopping } from "react-icons/ai";
+import NigthMode from '../NightMode/NigthMode';
+import React, {useState, useEffect} from "react";
 import '../.././Style.css';
 
 
+const NavBar = () => {
+  const [navColor, setNavColor] = useState("#8b77fd")
+  
+  const onChangeColor = (event) => {
+      const color = event.target.value;
+      setNavColor(color)
+  }
+  console.log(navColor);
 
-function NavBar() {
   return (
-    <Navbar className='navBar' expand="lg">
+    <Navbar className='navBar' expand="lg" style={{backgroundColor: navColor}}>
       <Container>
           <Navbar.Brand href="#home">
             <AiFillShopping size={70}/>
@@ -29,6 +38,7 @@ function NavBar() {
                     <NavDropdown.Item href="/category/men's clothing">Men's clothing</NavDropdown.Item>
                     <NavDropdown.Item href="/category/women's clothing">Women's clothing</NavDropdown.Item>
                   </NavDropdown>
+                  <NigthMode handleColor={onChangeColor}/>
               </Nav>
                 <CartWidget/>
                 <Button id='divSteam' variant="secondary"><AiOutlineUser size={25} id='SteamLogo'/> Iniciar sesión</Button>{' '}
