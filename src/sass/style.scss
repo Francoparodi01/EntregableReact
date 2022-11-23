@@ -2,11 +2,19 @@
     padding: 0;
     margin: 0; }
     .navBar{
-      background-color: rgb(13, 177, 122);
+      background-color: rgb(139, 119, 253);
     }
+
+    body{
+      background-color: whitesmoke; 
+    }
+
   #textoNavBar{
       color: rgb(255, 255, 255);
-  }
+      &:hover{ 
+        color: black;
+    }
+  };
   #basic-nav-dropdown{
       color: #f5f5f5 !important;
   }

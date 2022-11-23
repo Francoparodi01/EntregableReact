@@ -4,11 +4,19 @@
 }
 
 .navBar {
-  background-color: #0db17a;
+  background-color: #8b77fd;
+}
+
+body {
+  background-color: whitesmoke;
 }
 
 #textoNavBar {
   color: white;
+}
+
+#textoNavBar:hover {
+  color: black;
 }
 
 #basic-nav-dropdown {

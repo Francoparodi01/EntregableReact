@@ -3,9 +3,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
-import { GiAk47 } from "react-icons/gi";
+import { AiOutlineUser} from "react-icons/ai";
 import CartWidget from '../CartWidget/CartWidget';
-import { FaSteam } from "react-icons/fa";
+import { AiFillShopping } from "react-icons/ai";
 import '../.././Style.css';
 
 
@@ -15,9 +15,9 @@ function NavBar() {
     <Navbar className='navBar' expand="lg">
       <Container>
           <Navbar.Brand href="#home">
-            <GiAk47 size={70}/>
+            <AiFillShopping size={70}/>
           </Navbar.Brand>
-          <Navbar.Brand href="#home">MyShop</Navbar.Brand>
+          <Navbar.Brand href="/">MyShop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
@@ -31,7 +31,7 @@ function NavBar() {
                   </NavDropdown>
               </Nav>
                 <CartWidget/>
-                <Button id='divSteam' variant="secondary"><FaSteam size={25} id='SteamLogo'/> Iniciar sesión</Button>{' '}
+                <Button id='divSteam' variant="secondary"><AiOutlineUser size={25} id='SteamLogo'/> Iniciar sesión</Button>{' '}
             </Navbar.Collapse>
       </Container>
     </Navbar>
