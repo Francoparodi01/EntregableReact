@@ -5,7 +5,7 @@ const NigthMode = ({handleColor}) => {
     <select name="navColor" id="navColor" onChange={handleColor}>
         <option value="#8b77fd">Purple</option>
         <option value="#fd77fd">Pink</option>
-        <option value="#f5f5f5">white</option>
+        <option value="black">Black</option>
     </select>
   )
 }

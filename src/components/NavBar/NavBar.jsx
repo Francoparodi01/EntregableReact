@@ -27,7 +27,7 @@ const NavBar = () => {
           <Navbar.Brand href="#home">
             <AiFillShopping size={70}/>
           </Navbar.Brand>
-          <Navbar.Brand href="/">MyShop</Navbar.Brand>
+          <Navbar.Brand href="#home">MyShop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
