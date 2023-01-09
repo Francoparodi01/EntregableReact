@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Item from '../Item/Item';
 import './styles.scss';
-
-const ItemList = ({products}) => {
+ const ItemList = ({products}) => {
     return (
       <div className='item-container'>
           {products.length ? products.map(product => {
@@ -14,6 +13,6 @@ const ItemList = ({products}) => {
       </div>
     )
   }
-  
+
 
 export default ItemList

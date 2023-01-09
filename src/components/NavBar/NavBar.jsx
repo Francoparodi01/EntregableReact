@@ -24,14 +24,13 @@ const NavBar = () => {
   return (
     <Navbar className='navBar' expand="lg" style={{backgroundColor: navColor}}>
       <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <AiFillShopping size={70}/>
           </Navbar.Brand>
-          <Navbar.Brand href="#home">MyShop</Navbar.Brand>
+          <Navbar.Brand href="/">MyShop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link id='textoNavBar' href="#home">Home</Nav.Link>
                 <Nav.Link id='textoNavBar' href="#link">About us</Nav.Link>
                   <NavDropdown title="Category" id="basic-nav-dropdown">
                     <NavDropdown.Item as={Link} to="/category/jewelery">Jewelery</NavDropdown.Item>
