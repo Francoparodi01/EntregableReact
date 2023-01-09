@@ -1,41 +1,25 @@
 import React, { useEffect, useState } from "react";
 import ItemList from '../../components/ItemList/ItemList';
 import {useParams} from 'react-router-dom';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
 
     const {categoryId} = useParams();
 
-    console.log(categoryId);
-
-
-useEffect(() => {
-  (async () => {
-      try {
-          if (categoryId){
-            const response = await fetch(
-              "https://fakestoreapi.com/products/category/" + categoryId
-          );
-          const productos = await response.json();
-          setProductos(productos);
-          }
-          else {
-            const response = await fetch(
-                "https://fakestoreapi.com/products"
-            );
-            const productos = await response.json();
-            setProductos(productos);
-          }
-      } catch (error) {
-          console.log(error);
-      }
-  })();
-}, [categoryId]);
-
-console.log(productos);
-
-return <ItemList products={productos} />;
+    useEffect(() => {
+      const querydb = getFirestore();
+      const queryCollection = collection(querydb, "items")
+      if (categoryId) {
+          const queryFilter = query(queryCollection, where('category', '==', categoryId))
+          getDocs(queryFilter)
+            .then(res => setProductos(res.docs.map(productos =>({id: productos.id, ...productos.data()}))) )    
+        }else{
+          getDocs(queryCollection)
+            .then(res => setProductos(res.docs.map(productos =>({id: productos.id, ...productos.data()}))) )  
+        }
+  }, [categoryId]);
+  return <ItemList products={productos} />;
 };
-
-export default ItemListContainer;
+  export default ItemListContainer;

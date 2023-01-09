@@ -1,24 +1,16 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [productDetail, setProductDetail] = useState({})
     
 
     useEffect(()=> {
-
-
-        const getProducts = async () => {
-            try {
-                const response = await fetch('https://fakestoreapi.com/products');
-                const data = await response.json();
-                setProductDetail(data);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getProducts();
-
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, "items", "cBViyTmwjscGFlbMCXY7")
+        getDoc(queryDoc)
+        .then(res => setProductDetail({id: res.id, ...res.data()}))
     }, [])
 
     console.log(productDetail);
