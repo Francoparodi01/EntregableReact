@@ -8,16 +8,20 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import  CartProvider  from "./context/CartContext"
 
-function App() {
+
+function App() { 
   return (
     <BrowserRouter>
-      <NavBar />      
+      <NavBar />
+      <CartProvider>
       <Routes>
         <Route path="/" element={<ItemListContainer/>}/>
         <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
         <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
       </Routes>
+      </CartProvider>
     </BrowserRouter>
     );
   }

@@ -3,6 +3,7 @@ import ItemList from '../../components/ItemList/ItemList';
 import {useParams} from 'react-router-dom';
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
+
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
 
@@ -17,7 +18,7 @@ const ItemListContainer = () => {
             .then(res => setProductos(res.docs.map(productos =>({id: productos.id, ...productos.data()}))) )    
         }else{
           getDocs(queryCollection)
-            .then(res => setProductos(res.docs.map(productos =>({id: productos.id, ...productos.data()}))) )  
+            .then(res => setProductos(res.docs.map(productos =>({id: productos.id, ...productos.data()}))) )   
         }
   }, [categoryId]);
   return <ItemList products={productos} />;
