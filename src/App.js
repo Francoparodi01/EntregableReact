@@ -8,10 +8,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
 import  CartProvider  from "./context/CartContext"
 
 
-function App() { 
+function App() {
   return (
     <BrowserRouter>
       <NavBar />
