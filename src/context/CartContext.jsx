@@ -25,10 +25,10 @@ export const useCartContext = () =>useContext(CartContext);
 
   return (
     <CartContext.Provider value={{
+        addProduct,
         clearCart,
         isInCart,
-        removeProduct, 
-        addProduct
+        removeProduct 
     }}>
         {children}
     </CartContext.Provider>

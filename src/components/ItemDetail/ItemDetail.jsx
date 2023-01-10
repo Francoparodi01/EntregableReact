@@ -1,5 +1,5 @@
 import React, {  useState } from "react";
-import  ItemCount  from "../ItemCount/ItemCount";
+import ItemCount from "../ItemCount";
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
 import { useCartContext } from "../../context/CartContext";
@@ -37,7 +37,7 @@ const ItemDetail = ({ product }) => {
                 {goToCart 
                 ? 
                     <link to="/cart">Finalizar compra</link>
-                 : 
+                :
                     <ItemCount stock={10} initial={1} onAdd={onAdd} />
                 }
             </div>
