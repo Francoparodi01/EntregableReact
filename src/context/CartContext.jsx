@@ -12,15 +12,28 @@ export const useCartContext = () =>useContext(CartContext);
         
     const isInCart = (id) => cart.find(product => product.id === id) ?true : false;
 
-    const removeProduct = (id) => setCart((product => product.id !== id));
+    const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
     const addProduct = (item, newQuantity) =>{
-        const {quantity = 0 } = cart.find(product => product.item.id === item.id) || {};
-        const newCart = cart.filter(product => product.item.id !== item.id);
-        setCart([...newCart, {...item, quantity: quantity + newQuantity}])
+        let newCart;
+        let product = cart.find(product => product.id === item.id);
+        if (product) {
+          product.newQuantity += newQuantity;
+          newCart = [...cart]
+        }else{
+          product = {...item, newQuantity: newQuantity}
+          newCart = [...cart, product]
+        }
+        setCart(newCart)
     }
     console.log("carrito", cart);
 
+
+    const totalPrice = () =>{
+      return cart.reduce((prev, act) => prev + act.newQuantity * act.price, 0).toFixed(2)
+    }
+
+    const totalProducts = () =>{cart.reduce((acumulador, productoActual) => acumulador + productoActual.newQuantity, 0).toFixed(2)};
 
 
   return (
@@ -28,7 +41,10 @@ export const useCartContext = () =>useContext(CartContext);
         addProduct,
         clearCart,
         isInCart,
-        removeProduct 
+        removeProduct,
+        totalPrice,
+        totalProducts,
+        cart
     }}>
         {children}
     </CartContext.Provider>

@@ -40,7 +40,7 @@ const NavBar = () => {
                   </NavDropdown>
                   <NigthMode handleColor={onChangeColor}/>
               </Nav>
-                <CartWidget/>
+                <CartWidget to="./Cart"/> 
                 <Button id='divSteam' variant="secondary"><AiOutlineUser size={25} id='SteamLogo'/> Iniciar sesión</Button>{' '}
             </Navbar.Collapse>
       </Container>

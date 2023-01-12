@@ -1,5 +1,5 @@
 import React, {  useState } from "react";
-import ItemCount from "../ItemCount";
+import ItemCount from "../ItemCount/index"
 import { useNavigate } from "react-router-dom";
 import "./styles.scss";
 import { useCartContext } from "../../context/CartContext";
@@ -8,7 +8,7 @@ import { useCartContext } from "../../context/CartContext";
 const ItemDetail = ({ product }) => {
 
     const [goToCart, setGoToCart] = useState(false);
-    const {addProduct} = useCartContext;
+    const {addProduct} = useCartContext();
     const navigate = useNavigate();
 
 
@@ -19,9 +19,7 @@ const ItemDetail = ({ product }) => {
     };
 
     const handleFinish = () => {
-        const productToSave = {...product, quantity: goToCart}
-
-        navigate("/cart");
+        navigate("/Cart"); 
     };
 
 
@@ -36,7 +34,7 @@ const ItemDetail = ({ product }) => {
                 <h1>{product.title}</h1>
                 {goToCart 
                 ? 
-                    <link to="/cart">Finalizar compra</link>
+                <button onClick={handleFinish}>Finalizar compra</button>
                 :
                     <ItemCount stock={10} initial={1} onAdd={onAdd} />
                 }

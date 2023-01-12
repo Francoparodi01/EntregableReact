@@ -8,8 +8,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
 import  CartProvider  from "./context/CartContext"
+import Cart from './components/Cart/Cart';
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
         <Route path="/" element={<ItemListContainer/>}/>
         <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
         <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
+        <Route path="/Cart" element={<Cart/>}/>
       </Routes>
       </CartProvider>
     </BrowserRouter>
