@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
-import { BiCart } from "react-icons/bi";import 
-{ useCartContext } from '../../context/CartContext';
+import { BiCart } from "react-icons/bi";
+// import { useCartContext } from '../../context/CartContext';
 ;
 
 
 const CartWidget = () => {
-  const { totalProducts } = useCartContext();
+  //const { totalProducts } = useCartContext();
   return (
     <> 
     <BiCart id='CarritoLogo' size={50}/>
