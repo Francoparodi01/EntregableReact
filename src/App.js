@@ -25,6 +25,6 @@ function App() {
       </Routes>
       </CartProvider>
     </BrowserRouter>
-    );
+
   }
 export default App;
